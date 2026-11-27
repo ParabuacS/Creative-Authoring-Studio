@@ -1,9 +1,12 @@
-
 const express = require("express");
+const path = require("path");
 const connectDatabase = require("./config/database");
 
 const app = express();
 const port = 3000;
+
+// Define the location of the frontend directory.
+const frontendPath = path.join(__dirname, "../frontend");
 
 // Configure middleware to parse incoming JSON requests.
 app.use(express.json());
@@ -15,6 +18,9 @@ app.get("/api/health", (request, response) => {
         message: "Creative Authoring Studio API is running."
     });
 });
+
+// Serve the frontend files through the Express server.
+app.use(express.static(frontendPath));
 
 // Connect to MongoDB before starting the Express server.
 async function startServer() {
