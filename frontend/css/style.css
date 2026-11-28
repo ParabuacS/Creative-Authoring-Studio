@@ -90,3 +90,278 @@ button:focus-visible {
     outline: 3px solid var(--highlight-color);
     outline-offset: 4px;
 }
+
+/* Layout structuring */
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    width: min(100% - 40px, 1100px);
+    margin: 0 auto;
+    padding: 60px 0;
+    flex: 1;
+}
+
+/* Specialized header for the design theme */
+/* Aesthetic is inspired by Japanese shrines, with a fox mask as the motif and mascot */
+
+.app-header {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 210px;
+    padding: 40px 24px;
+
+    background-color: var(--primary-color);
+    color: #FFF8EE;
+
+    border-bottom: 5px solid var(--highlight-color);
+}
+
+/* Subtle decorative shrine details. */
+.app-header::before,
+.app-header::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255, 248, 238, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.app-header::before {
+    top: -100px;
+    left: -60px;
+}
+
+.app-header::after {
+    right: -60px;
+    bottom: -120px;
+}
+
+.brand-container {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    max-width: 100%;
+}
+
+.brand-emblem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+
+    background-color: #FFF8EE;
+    color: var(--primary-color);
+
+    border: 3px solid var(--highlight-color);
+    border-radius: 50%;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.brand-emblem span {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.brand-text h1 {
+    font-family: var(--heading-font);
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    font-weight: normal;
+    letter-spacing: 0.03em;
+}
+
+.brand-text p {
+    margin-top: 5px;
+    color: #F5DCC8;
+    font-family: var(--heading-font);
+    font-size: 1.05rem;
+    font-style: italic;
+}
+
+
+/* Connection assistance for backend */
+
+.connection-panel {
+    max-width: 760px;
+    margin: 0 auto;
+
+    padding: 36px;
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 10px;
+
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.section-heading {
+    margin-bottom: 28px;
+}
+
+.section-eyebrow {
+    margin-bottom: 8px;
+
+    color: var(--secondary-color);
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+}
+
+.section-heading h2 {
+    color: var(--text-color);
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.section-description {
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.connection-information {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+
+    padding: 20px;
+
+    background-color: var(--surface-secondary);
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+#connectionStatus {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+
+/* Button styling */
+
+.primary-button {
+    padding: 11px 22px;
+
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-speed) ease,
+        transform var(--transition-speed) ease,
+        box-shadow var(--transition-speed) ease;
+}
+
+.primary-button:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.primary-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.primary-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* Server response UI */
+
+.server-response-container {
+    margin-top: 28px;
+}
+
+.server-response-container h3 {
+    margin-bottom: 12px;
+
+    color: var(--text-color);
+    font-family: var(--heading-font);
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+#serverResponse {
+    min-height: 90px;
+    padding: 18px;
+
+    overflow-x: auto;
+
+    background-color: var(--surface-secondary);
+    color: var(--text-secondary);
+
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+
+    font-family: "Courier New", monospace;
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+
+/* Footer design */
+
+.app-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    padding: 24px 20px;
+
+    background-color: var(--surface-secondary);
+
+    border-top: 1px solid var(--border-color);
+
+    text-align: center;
+}
+
+.app-footer p:first-child {
+    color: var(--text-color);
+    font-family: var(--heading-font);
+    font-size: 0.95rem;
+}
+
+.app-footer p:last-child {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-style: italic;
+}

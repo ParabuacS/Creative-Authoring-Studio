@@ -9,26 +9,49 @@
     <script src="js/app.js" defer></script>
 </head>
 <body>
-    <header>
-        狐
-        <h1>Creative Authoring Studio</h1>
-        <p>Your creative sanctuary.</p>
-    </header>
-    <main>
-        <!-- Main application content. -->
-        <section>
-            <p>SYSTEM STATUS</p>
-            <h2>Backend Connection</h2>
-            <p>
-            Check whether Creative Authoring Studio is communicating
-            with its backend server.
-            </p>
-            <h3>Server Response</h3>
-        </section>
-    </main>
-    <footer class="app-footer">
-        <p>Creative Authoring Studio</p>
-        <p>A place for stories yet to be told.</p>
-    </footer>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="brand-container">
+                <div class="brand-emblem" aria-hidden="true">
+                    <span>狐</span>
+                </div>
+                <div class="brand-text">
+                    <h1>Creative Authoring Studio</h1>
+                    <p>Your creative sanctuary.</p>
+                </div>
+            </div>
+        </header>
+        <!-- Main app -->
+        <main class="main-content">
+            <!-- Initial backend connection section. -->
+            <section class="connection-panel" id="connectionSection" aria-labelledby="connectionHeading">
+                <div class="section-heading">
+                    <p class="section-eyebrow">SYSTEM STATUS</p>
+                    <h2 id="connectionHeading">Backend Connection</h2>
+                    <p class="section-description">
+                        Check whether Creative Authoring Studio is communicating
+                        with its backend server.
+                    </p>
+                </div>
+
+                <!-- As there is no content yet, I am making sure the backend is still connected -->
+                <div class="connection-information">
+                    <p id="connectionStatus" role="status" aria-live="polite">
+                        Checking backend connection...
+                    </p>
+
+                    <button id="connectionButton" class="primary-button"type="button">Check Connection</button>
+                </div>
+                <div class="server-response-container">
+                    <h3>Server Response</h3>
+                    <pre id="serverResponse">Waiting for server response...</pre>
+                </div>
+            </section>
+        </main>
+        <footer class="app-footer">
+            <p>Creative Authoring Studio</p>
+            <p>A place for stories yet to be told.</p>
+        </footer>
+    </div>
 </body>
 </html>
