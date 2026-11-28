@@ -365,3 +365,49 @@ button:focus-visible {
     font-size: 0.8rem;
     font-style: italic;
 }
+
+/* Responsiveness for smaller screens like tablet and mobile */
+
+@media (max-width: 600px) {
+    .app-header {
+        min-height: 170px;
+        padding: 30px 18px;
+    }
+
+    .brand-container {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .brand-emblem {
+        width: 64px;
+        height: 64px;
+    }
+
+    .brand-emblem span {
+        font-size: 1.7rem;
+    }
+
+    .main-content {
+        width: min(100% - 24px, 1100px);
+        padding: 32px 0;
+    }
+
+    .connection-panel {
+        padding: 22px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.65rem;
+    }
+
+    .connection-information {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .primary-button {
+        width: 100%;
+    }
+}
